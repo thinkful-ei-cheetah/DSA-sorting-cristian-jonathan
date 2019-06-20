@@ -1,6 +1,8 @@
 /* eslint-disable strict */
 // bubble sort
 
+const LL = require('./LinkedList')
+
 function swap(arr, i, j) {
   const temp = arr[i];
   arr[i] = arr[j];
@@ -117,7 +119,7 @@ function partition(arr, start, end) {
 
 
 const arr = [14, 17, 13, 15, 19, 10, 3, 16, 9, 12];
-console.log(quickSort(arr));
+// console.log(quickSort(arr));
 
 
 /// QUESTION 2
@@ -138,4 +140,79 @@ function qSort(arr, start=0, end=arr.length) {
 
 const data = '89 30 25 32 72 70 51 42 25 24 53 55 78 50 13 40 48 32 26 2 14 33 45 72 56 44 21 88 27 68 15 62 93 98 73 28 16 46 87 28 65 38 67 16 85 63 23 69 64 91 9 70 81 27 97 82 6 88 3 7 46 13 11 64 76 31 26 38 28 13 17 69 90 1 6 7 64 43 9 73 80 98 46 27 22 87 49 83 6 39 42 51 54 84 34 53 78 40 14 5';
 
-console.log(qSort(data.split(' ').map(number => parseInt(number))));
+// console.log(qSort(data.split(' ').map(number => parseInt(number))));
+
+function mSort(array) {
+  if (array.length <=1) {
+    return array;
+  }
+
+  const middle = Math.floor(array.length/2)
+  let left = array.slice(0, middle)
+  let right = array.slice(middle, array.length)
+
+  left = mSort(left);
+  right = mSort(right);
+
+  return merge(left, right, array);
+}
+
+// console.log(mSort(data.split(' ').map(number => parseInt(number))));
+
+function createLL() {
+  const test = new LL()
+  test.insertLast(9);
+  test.insertLast(3);
+  test.insertLast(7);
+  test.insertLast(2);
+  test.insertLast(4);
+  test.insertLast(1);
+  test.insertLast(5)
+  return test;
+}
+
+// sorting linked list
+function size(LL) {
+  let size = 0
+
+  let currNode = LL.head
+
+  while (currNode !== null) {
+    size++
+    currNode = currNode.next
+  }
+
+  return size
+}
+
+function middle(LL) {
+  let slowNode = LL.head
+  let fastNode = LL.head
+
+  while (fastNode !== null) {
+    fastNode = fastNode.next.next
+    slowNode = slowNode.next
+  }
+
+  return slowNode.val
+}
+
+// input: 9 > 3 > 7 > 2 > 4 > 1 > 5 > null
+// output: 1 > 2 > 3 > 4 > 5 > 7 > 9 > null
+asdfklajs              p1
+                                   p2
+function sortLL(LL, size,) {
+  let currNode = this.head
+
+  if (currNode.next == null) {
+    
+  }
+  // p1 = 0
+  // p2 = 0
+
+  while (currNode.next !== null) {
+    
+  }
+}
+
+// console.log(createLL())
