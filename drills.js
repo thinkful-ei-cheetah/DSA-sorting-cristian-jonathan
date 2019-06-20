@@ -1,17 +1,18 @@
+/* eslint-disable strict */
 // bubble sort
 
 function swap(arr, i, j) {
   const temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
-};
+}
 
 function bubbleSort(arr) {
   let swaps = 0;
   for (let i = 0; i < arr.length-1; i++) {
     if (arr[i] > arr[i + 1]) {
       swap(arr, i, i+1);
-      swaps++
+      swaps++;
     }
   }
 
@@ -38,7 +39,7 @@ function mergeSort(arr, counter=0) {
   left = mergeSort(left, counter+1);
   right = mergeSort(right, counter+1);
   return merge(left, right, arr);
-};
+}
 
 function merge(left, right, arr) {
   let leftIndex = 0;
@@ -89,7 +90,7 @@ function partition(arr, start, end) {
   }
   swap(arr, end-1, j);
   return j;
-};
+}
 
 // understanding merge sort
 // Given the following list of numbers 21, 1, 26, 45, 29, 28, 2, 9, | 16, 49, 39, 27, 43, 34, 46, 40
@@ -100,4 +101,10 @@ function partition(arr, start, end) {
 // 4) 1 21 26 45 & 2 9 28 29 
 
 // console.log(mergeSort([21, 1, 26, 45, 29, 28, 2, 9, 16, 49, 39, 27, 43, 34, 46, 40]));
+
+
+// after first fort 3 9 1 14 17 24 22 20
+// 14 17 3 9 1 24 22 20
+// true -> The pivot could have been either 14 or 17
+// all other answers are false
 
